@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes · Lisha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="classes.css" />
+</head>
+<body>
+
+    <div class="classes-dashboard">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="greeting">
+                <h2>Hey Lisha, <span>Here are your classes</span></h2>
+                <p>📚 Manage your classes</p>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search classes..." />
+            </div>
+        </div>
+
+        <!-- ===== NAV ===== -->
+        <div class="nav-links">
+            <a href="course.html"><i class="fas fa-th-large"></i> Courses</a>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="classes.html" class="active"><i class="fas fa-chalkboard-teacher"></i> Classes</a>
+            <a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a>
+            <a href="chat.html"><i class="fas fa-comment-dots"></i> Chat</a>
+        </div>
+
+        <!-- ===== STATS ===== -->
+        <div class="stats-grid">
+            <div class="stat-card" style="background: linear-gradient(135deg, #e8f0fe, #d4e4ff);">
+                <div class="stat-icon" style="color: #4a7ec7;"><i class="fas fa-users"></i></div>
+                <div class="stat-number">12</div>
+                <div class="stat-label">Active Classes</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 4%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #fef3e2, #ffe8c7);">
+                <div class="stat-icon" style="color: #e68a2e;"><i class="fas fa-user-graduate"></i></div>
+                <div class="stat-number">48</div>
+                <div class="stat-label">Total Students</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 7%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #e3f5eb, #c8f0dc);">
+                <div class="stat-icon" style="color: #0d7a4b;"><i class="fas fa-clock"></i></div>
+                <div class="stat-number">28</div>
+                <div class="stat-label">Hours/Week</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 3%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #fce8f0, #fdd0e0);">
+                <div class="stat-icon" style="color: #b33a6b;"><i class="fas fa-tasks"></i></div>
+                <div class="stat-number">156</div>
+                <div class="stat-label">Assignments</div>
+                <div class="stat-change down"><i class="fas fa-arrow-down"></i> 1%</div>
+            </div>
+        </div>
+
+        <!-- ===== FILTERS ===== -->
+        <div class="filters">
+            <button class="filter-btn active">All Classes</button>
+            <button class="filter-btn">Science</button>
+            <button class="filter-btn">Maths</button>
+            <button class="filter-btn">Computer</button>
+            <button class="filter-btn">Languages</button>
+            <button class="filter-btn">Arts</button>
+        </div>
+
+        <!-- ===== CLASSES GRID ===== -->
+        <div class="section-title">
+            <i class="fas fa-chalkboard-teacher"></i> My Classes
+        </div>
+
+        <div class="classes-grid">
+            <!-- Class 1 - Science -->
+            <div class="class-card science">
+                <div class="class-header">
+                    <div class="class-icon" style="background: #d4e4ff; color: #2a5f9e;">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="class-info">
+                        <h3>Science 101</h3>
+                        <p>Dr. Sarah Ahmed</p>
+                    </div>
+                </div>
+                <div class="class-details">
+                    <div class="detail-item">
+                        <i class="fas fa-users"></i>
+                        <span>24 Students</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon, Wed 10:00 AM</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>12 Sessions</span>
+                    </div>
+                </div>
+                <div class="class-progress">
+                    <div class="progress-label">
+                        <span>Progress</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, #4a7ec7, #7aa5e6);"></div></div>
+                </div>
+                <div class="class-actions">
+                    <button class="btn-join" style="background: #4a7ec7;">Join Class</button>
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+
+            <!-- Class 2 - Maths -->
+            <div class="class-card maths">
+                <div class="class-header">
+                    <div class="class-icon" style="background: #fdd0e0; color: #a1325a;">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="class-info">
+                        <h3>Mathematics 201</h3>
+                        <p>Prof. Ahmed Hassan</p>
+                    </div>
+                </div>
+                <div class="class-details">
+                    <div class="detail-item">
+                        <i class="fas fa-users"></i>
+                        <span>18 Students</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tue, Thu 2:00 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>10 Sessions</span>
+                    </div>
+                </div>
+                <div class="class-progress">
+                    <div class="progress-label">
+                        <span>Progress</span>
+                        <span>45%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 45%; background: linear-gradient(90deg, #b33a6b, #d97294);"></div></div>
+                </div>
+                <div class="class-actions">
+                    <button class="btn-join" style="background: #b33a6b;">Join Class</button>
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+
+            <!-- Class 3 - Computer -->
+            <div class="class-card computer">
+                <div class="class-header">
+                    <div class="class-icon" style="background: #d4f0e0; color: #0d6b3a;">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="class-info">
+                        <h3>Computer Science</h3>
+                        <p>Dr. Mona Khalil</p>
+                    </div>
+                </div>
+                <div class="class-details">
+                    <div class="detail-item">
+                        <i class="fas fa-users"></i>
+                        <span>30 Students</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon, Wed 12:00 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>15 Sessions</span>
+                    </div>
+                </div>
+                <div class="class-progress">
+                    <div class="progress-label">
+                        <span>Progress</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, #0d7a4b, #4caf84);"></div></div>
+                </div>
+                <div class="class-actions">
+                    <button class="btn-join" style="background: #0d7a4b;">Join Class</button>
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+
+            <!-- Class 4 - English -->
+            <div class="class-card english">
+                <div class="class-header">
+                    <div class="class-icon" style="background: #ffd4d4; color: #9e2a2a;">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="class-info">
+                        <h3>English Vocabulary</h3>
+                        <p>Ms. Noha Samir</p>
+                    </div>
+                </div>
+                <div class="class-details">
+                    <div class="detail-item">
+                        <i class="fas fa-users"></i>
+                        <span>22 Students</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tue, Thu 9:00 AM</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>8 Sessions</span>
+                    </div>
+                </div>
+                <div class="class-progress">
+                    <div class="progress-label">
+                        <span>Progress</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, #c74a4a, #e67a7a);"></div></div>
+                </div>
+                <div class="class-actions">
+                    <button class="btn-join" style="background: #c74a4a;">Join Class</button>
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+
+            <!-- Class 5 - Drawing -->
+            <div class="class-card drawing">
+                <div class="class-header">
+                    <div class="class-icon" style="background: #f0d4ff; color: #6a2f9e;">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="class-info">
+                        <h3>Drawing & Art</h3>
+                        <p>Prof. Youssef Ali</p>
+                    </div>
+                </div>
+                <div class="class-details">
+                    <div class="detail-item">
+                        <i class="fas fa-users"></i>
+                        <span>15 Students</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Sun, Tue 4:00 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>6 Sessions</span>
+                    </div>
+                </div>
+                <div class="class-progress">
+                    <div class="progress-label">
+                        <span>Progress</span>
+                        <span>30%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 30%; background: linear-gradient(90deg, #8a4ac7, #b57ae6);"></div></div>
+                </div>
+                <div class="class-actions">
+                    <button class="btn-join" style="background: #8a4ac7;">Join Class</button>
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+
+            <!-- Class 6 - Social Studies -->
+            <div class="class-card social">
+                <div class="class-header">
+                    <div class="class-icon" style="background: #ffe8c7; color: #b36b1e;">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="class-info">
+                        <h3>Social Studies</h3>
+                        <p>Dr. Khaled Ibrahim</p>
+                    </div>
+                </div>
+                <div class="class-details">
+                    <div class="detail-item">
+                        <i class="fas fa-users"></i>
+                        <span>20 Students</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon, Wed 3:00 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>10 Sessions</span>
+                    </div>
+                </div>
+                <div class="class-progress">
+                    <div class="progress-label">
+                        <span>Progress</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, #e68a2e, #f0b56e);"></div></div>
+                </div>
+                <div class="class-actions">
+                    <button class="btn-join" style="background: #e68a2e;">Join Class</button>
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== UPCOMING CLASSES ===== -->
+        <div class="section-title" style="margin-top: 30px;">
+            <i class="fas fa-calendar-check"></i> Upcoming Classes
+        </div>
+
+        <div class="upcoming-list">
+            <div class="upcoming-item">
+                <div class="upcoming-time" style="background: #d4e4ff; color: #2a5f9e;">
+                    <span>10:00</span>
+                    <small>AM</small>
+                </div>
+                <div class="upcoming-info">
+                    <h4>Science 101</h4>
+                    <p>Dr. Sarah Ahmed</p>
+                </div>
+                <div class="upcoming-status" style="background: #d4e4ff; color: #2a5f9e;">Today</div>
+            </div>
+            <div class="upcoming-item">
+                <div class="upcoming-time" style="background: #fdd0e0; color: #a1325a;">
+                    <span>2:00</span>
+                    <small>PM</small>
+                </div>
+                <div class="upcoming-info">
+                    <h4>Mathematics 201</h4>
+                    <p>Prof. Ahmed Hassan</p>
+                </div>
+                <div class="upcoming-status" style="background: #fdd0e0; color: #a1325a;">Tomorrow</div>
+            </div>
+            <div class="upcoming-item">
+                <div class="upcoming-time" style="background: #d4f0e0; color: #0d6b3a;">
+                    <span>12:00</span>
+                    <small>PM</small>
+                </div>
+                <div class="upcoming-info">
+                    <h4>Computer Science</h4>
+                    <p>Dr. Mona Khalil</p>
+                </div>
+                <div class="upcoming-status" style="background: #d4f0e0; color: #0d6b3a;">Tomorrow</div>
+            </div>
+            <div class="upcoming-item">
+                <div class="upcoming-time" style="background: #ffe8c7; color: #b36b1e;">
+                    <span>3:00</span>
+                    <small>PM</small>
+                </div>
+                <div class="upcoming-info">
+                    <h4>Social Studies</h4>
+                    <p>Dr. Khaled Ibrahim</p>
+                </div>
+                <div class="upcoming-status" style="background: #ffe8c7; color: #b36b1e;">Wed</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

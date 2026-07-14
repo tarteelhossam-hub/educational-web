@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard · Lisha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #f0f4fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        /* ========================================
+           DASHBOARD CONTAINER
+           ======================================== */
+        .dashboard {
+            max-width: 1300px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 36px;
+            padding: 28px 32px 32px 32px;
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ========================================
+           HEADER
+           ======================================== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .greeting h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0b1b32;
+        }
+
+        .greeting h2 span {
+            font-weight: 300;
+            color: #6b7a93;
+        }
+
+        .greeting p {
+            font-size: 15px;
+            color: #3f4b62;
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
+        .search-box {
+            background: #f1f5f9;
+            border-radius: 60px;
+            padding: 8px 18px 8px 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #e4eaf2;
+            min-width: 260px;
+            transition: 0.3s;
+        }
+
+        .search-box:hover {
+            border-color: #7aa5e6;
+            box-shadow: 0 0 0 3px rgba(74, 126, 199, 0.1);
+        }
+
+        .search-box i {
+            color: #7c8aa0;
+            font-size: 15px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            padding: 8px 0;
+            font-size: 14px;
+            width: 100%;
+            outline: none;
+            color: #1f2a3f;
+        }
+
+        .search-box input::placeholder {
+            color: #9aabbf;
+        }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            margin: 16px 0 28px 0;
+            font-weight: 500;
+            font-size: 15px;
+            color: #44526c;
+            border-bottom: 1px solid #edf2f8;
+            padding-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #44526c;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            padding: 4px 0;
+            position: relative;
+        }
+
+        .nav-links a i {
+            font-size: 16px;
+            color: #62748c;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1d2b44;
+        }
+
+        .nav-links a:hover i {
+            color: #4a7ec7;
+        }
+
+        /* ===== ACTIVE STATE ===== */
+        .nav-links a.active {
+            color: #4a7ec7;
+            font-weight: 600;
+        }
+
+        .nav-links a.active i {
+            color: #4a7ec7;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #4a7ec7;
+            border-radius: 10px;
+        }
+
+        /* ========================================
+           STATS CARDS
+           ======================================== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            border-radius: 20px;
+            padding: 20px 18px;
+            border: none;
+            transition: 0.3s;
+            cursor: default;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-card .stat-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .stat-card .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0b1b32;
+            margin-bottom: 4px;
+        }
+
+        .stat-card .stat-label {
+            font-size: 14px;
+            color: #5f738e;
+            font-weight: 500;
+        }
+
+        .stat-card .stat-change {
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 8px;
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 40px;
+        }
+
+        .stat-change.up {
+            background: #e3f5eb;
+            color: #0d7a4b;
+        }
+
+        .stat-change.down {
+            background: #fde8e8;
+            color: #b33a3a;
+        }
+
+        /* ========================================
+           SECTION TITLE
+           ======================================== */
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0b1b32;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #4a7ec7;
+        }
+
+        /* ========================================
+           COURSE GRID
+           ======================================== */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 38px;
+        }
+
+        .course-card {
+            background: #f8fafd;
+            border-radius: 24px;
+            padding: 18px 16px 16px 16px;
+            transition: 0.3s;
+            border: 1px solid #eef3f9;
+        }
+
+        .course-card:hover {
+            background: #ffffff;
+            border-color: #d4dfeb;
+            box-shadow: 0 8px 24px rgba(0, 20, 40, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .course-card .badge {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 0.2px;
+        }
+
+        .course-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0b1b32;
+            margin-bottom: 4px;
+        }
+
+        .course-card .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e6edf6;
+            border-radius: 10px;
+            margin: 12px 0 8px 0;
+            overflow: hidden;
+        }
+
+        .course-card .progress-bar .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .course-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin: 10px 0 6px 0;
+            font-size: 14px;
+            color: #3a4a62;
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-meta i {
+            color: #687e9b;
+            width: 18px;
+            font-size: 14px;
+        }
+
+        .course-cost {
+            font-weight: 600;
+            color: #1e2c47;
+            margin-top: 8px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .course-cost i {
+            color: #52718c;
+        }
+
+        .course-card .cost-value {
+            font-weight: 700;
+            color: #10203b;
+        }
+
+        /* ========================================
+           COMPUTER DETAIL
+           ======================================== */
+        .computer-detail {
+            background: #f8fafd;
+            border-radius: 28px;
+            padding: 24px 28px 28px 28px;
+            border: 1px solid #eef3f9;
+            margin-top: 6px;
+        }
+
+        .detail-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .detail-header h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0b1b32;
+        }
+
+        .detail-header h2 i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        .detail-header span {
+            font-size: 15px;
+            color: #576d86;
+            background: #e9eff6;
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+
+        .chapter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px 12px 16px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e9eff6;
+            transition: 0.3s;
+        }
+
+        .chapter-item:hover {
+            background: #f4f9ff;
+            border-color: #d3dfec;
+            transform: translateX(4px);
+        }
+
+        .chapter-item .left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: #1f304a;
+        }
+
+        .chapter-item .left i {
+            font-size: 15px;
+            width: 20px;
+        }
+
+        .chapter-item .left .num {
+            font-weight: 400;
+            color: #60768f;
+            margin-right: 4px;
+        }
+
+        .chapter-item .time {
+            font-size: 14px;
+            color: #40546e;
+            background: #f1f6fc;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-weight: 450;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .chapter-item .time i {
+            font-size: 13px;
+            color: #607a96;
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 780px) {
+            .dashboard {
+                padding: 20px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .search-box {
+                width: 100%;
+                min-width: unset;
+            }
+            .nav-links {
+                gap: 14px 18px;
+            }
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .chapter-item {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            .computer-detail {
+                padding: 18px;
+            }
+            .detail-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="greeting">
+                <h2>Hey Lisha, <span>Let's find a perfect course for your career</span></h2>
+                <p>📌 Search...</p>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search courses, subjects..." />
+            </div>
+        </div>
+
+        <!-- ===== NAV ===== -->
+        <div class="nav-links">
+            <a href="course.html"><i class="fas fa-th-large"></i> Courses</a>
+            <a href="dashboard.html" class="active"><i class="fas fa-chart-pie"></i> Dashboard</a>  <!-- ✅ active هنا -->
+            <a href="classes.html"><i class="fas fa-chalkboard-teacher"></i> Classes</a>
+            <a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a>
+            <a href="chat.html"><i class="fas fa-comment-dots"></i> Chat</a>
+        </div>
+
+        <!-- ===== STATS ===== -->
+        <div class="stats-grid">
+            <div class="stat-card" style="background: linear-gradient(135deg, #e8f0fe, #d4e4ff);">
+                <div class="stat-icon" style="color: #4a7ec7;"><i class="fas fa-book-open"></i></div>
+                <div class="stat-number">24</div>
+                <div class="stat-label">Total Courses</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 12%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #fef3e2, #ffe8c7);">
+                <div class="stat-icon" style="color: #e68a2e;"><i class="fas fa-clock"></i></div>
+                <div class="stat-number">278</div>
+                <div class="stat-label">Study Hours</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 8%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #e3f5eb, #c8f0dc);">
+                <div class="stat-icon" style="color: #0d7a4b;"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-number">18</div>
+                <div class="stat-label">Completed</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 5%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #fce8f0, #fdd0e0);">
+                <div class="stat-icon" style="color: #b33a6b;"><i class="fas fa-trophy"></i></div>
+                <div class="stat-number">4</div>
+                <div class="stat-label">Certificates</div>
+                <div class="stat-change down"><i class="fas fa-arrow-down"></i> 2%</div>
+            </div>
+        </div>
+
+        <!-- ===== COURSES ===== -->
+        <div class="section-title">
+            <i class="fas fa-graduation-cap"></i> My Courses
+        </div>
+
+        <div class="course-grid">
+            <div class="course-card science">
+                <div class="badge" style="background: #d4e4ff; color: #2a5f9e;">Science</div>
+                <h3>Chapter: 24</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, #4a7ec7, #7aa5e6);"></div></div>
+                <div class="course-meta">
+                    <span><i class="far fa-clock"></i> Study Time: 62hrs</span>
+                </div>
+                <div class="course-cost"><i class="fas fa-tag"></i> Cost: <span class="cost-value">$25</span></div>
+            </div>
+
+            <div class="course-card social">
+                <div class="badge" style="background: #ffe8c7; color: #b36b1e;">Social Studies</div>
+                <h3>Chapter: 22</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, #e68a2e, #f0b56e);"></div></div>
+                <div class="course-meta">
+                    <span><i class="far fa-clock"></i> Study Time: 48hrs</span>
+                </div>
+                <div class="course-cost"><i class="fas fa-tag"></i> Cost: <span class="cost-value">$18</span></div>
+            </div>
+
+            <div class="course-card maths">
+                <div class="badge" style="background: #fdd0e0; color: #a1325a;">Maths</div>
+                <h3>Chapter: 19</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width: 45%; background: linear-gradient(90deg, #b33a6b, #d97294);"></div></div>
+                <div class="course-meta">
+                    <span><i class="far fa-clock"></i> Study Time: 54hrs</span>
+                </div>
+                <div class="course-cost"><i class="fas fa-tag"></i> Cost: <span class="cost-value">$29</span></div>
+            </div>
+
+            <div class="course-card computer">
+                <div class="badge" style="background: #d4f0e0; color: #0d6b3a;">Computer</div>
+                <h3>Chapter: 17</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, #0d7a4b, #4caf84);"></div></div>
+                <div class="course-meta">
+                    <span><i class="far fa-clock"></i> Study Time: 38hrs</span>
+                </div>
+                <div class="course-cost"><i class="fas fa-tag"></i> Cost: <span class="cost-value">$27</span></div>
+            </div>
+
+            <div class="course-card drawing">
+                <div class="badge" style="background: #f0d4ff; color: #6a2f9e;">Drawing</div>
+                <h3>Chapter: 15</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width: 30%; background: linear-gradient(90deg, #8a4ac7, #b57ae6);"></div></div>
+                <div class="course-meta">
+                    <span><i class="far fa-clock"></i> Study Time: 29hrs</span>
+                </div>
+                <div class="course-cost"><i class="fas fa-tag"></i> Cost: <span class="cost-value">$27</span></div>
+            </div>
+
+            <div class="course-card english">
+                <div class="badge" style="background: #ffd4d4; color: #9e2a2a;">Eng Vocabulary</div>
+                <h3>Chapter: 25</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, #c74a4a, #e67a7a);"></div></div>
+                <div class="course-meta">
+                    <span><i class="far fa-clock"></i> Study Time: 48hrs</span>
+                </div>
+                <div class="course-cost"><i class="fas fa-tag"></i> Cost: <span class="cost-value">$22</span></div>
+            </div>
+        </div>
+
+        <!-- ===== COMPUTER DETAIL ===== -->
+        <div class="computer-detail">
+            <div class="detail-header">
+                <h2><i class="fas fa-laptop-code" style="color: #0d7a4b;"></i> Computer</h2>
+                <span>Table of content</span>
+            </div>
+
+            <div class="chapter-list">
+                <div class="chapter-item">
+                    <div class="left"><i class="far fa-file-alt" style="color: #4a7ec7;"></i> <span class="num">01</span> Introduction to Computer</div>
+                    <div class="time"><i class="far fa-clock"></i> 34 min</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="left"><i class="fas fa-microchip" style="color: #e68a2e;"></i> <span class="num">02</span> Computer Hardware</div>
+                    <div class="time"><i class="far fa-clock"></i> 34 min</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="left"><i class="fas fa-cogs" style="color: #b33a6b;"></i> <span class="num">03</span> System Software</div>
+                    <div class="time"><i class="far fa-clock"></i> 34 min</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="left"><i class="fas fa-comment-dots" style="color: #8a4ac7;"></i> <span class="num">04</span> Communications Literacy</div>
+                    <div class="time"><i class="far fa-clock"></i> 34 min</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="left"><i class="fas fa-code" style="color: #c74a4a;"></i> <span class="num">05</span> Software Development</div>
+                    <div class="time"><i class="far fa-clock"></i> 34 min</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="left"><i class="fas fa-shield-alt" style="color: #0d7a4b;"></i> <span class="num">06</span> Networks and Security</div>
+                    <div class="time"><i class="far fa-clock"></i> 34 min</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="left"><i class="fas fa-tools" style="color: #9e6a2a;"></i> <span class="num">07</span> Utility Software</div>
+                    <div class="time"><i class="far fa-clock"></i> 34 min</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

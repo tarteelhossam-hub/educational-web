@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat · Lisha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+
+    <div class="chat-dashboard">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="greeting">
+                <h2>Hey Lisha, <span>Your Messages</span></h2>
+                <p>💬 Chat with your instructors and classmates</p>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search conversations..." />
+            </div>
+        </div>
+
+        <!-- ===== NAV ===== -->
+        <div class="nav-links">
+            <a href="course.html"><i class="fas fa-th-large"></i> Courses</a>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="classes.html"><i class="fas fa-chalkboard-teacher"></i> Classes</a>
+            <a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a>
+            <a href="chat.html" class="active"><i class="fas fa-comment-dots"></i> Chat</a>
+        </div>
+
+        <!-- ===== CHAT LAYOUT ===== -->
+        <div class="chat-container">
+
+            <!-- ===== SIDEBAR - CONTACTS ===== -->
+            <div class="chat-sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-comment-dots"></i> Conversations</h3>
+                    <button class="new-chat-btn"><i class="fas fa-plus"></i></button>
+                </div>
+
+                <!-- Online Status -->
+                <div class="online-status">
+                    <span class="status-dot online"></span>
+                    <span>8 online now</span>
+                </div>
+
+                <!-- Contact List -->
+                <div class="contact-list">
+                    <!-- Contact 1 - Dr. Sarah (Science) -->
+                    <div class="contact-item active">
+                        <div class="contact-avatar" style="background: #d4e4ff; color: #2a5f9e;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Dr. Sarah Ahmed</h4>
+                            <p class="last-msg">Great job on your assignment!</p>
+                        </div>
+                        <div class="contact-meta">
+                            <span class="time">12:30</span>
+                            <span class="unread">3</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact 2 - Prof. Ahmed (Maths) -->
+                    <div class="contact-item">
+                        <div class="contact-avatar" style="background: #fdd0e0; color: #a1325a;">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Prof. Ahmed Hassan</h4>
+                            <p class="last-msg">See you in class tomorrow</p>
+                        </div>
+                        <div class="contact-meta">
+                            <span class="time">11:15</span>
+                            <span class="unread">1</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact 3 - Dr. Mona (Computer) -->
+                    <div class="contact-item">
+                        <div class="contact-avatar" style="background: #d4f0e0; color: #0d6b3a;">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Dr. Mona Khalil</h4>
+                            <p class="last-msg">The project deadline is extended</p>
+                        </div>
+                        <div class="contact-meta">
+                            <span class="time">Yesterday</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact 4 - Noha (English) -->
+                    <div class="contact-item">
+                        <div class="contact-avatar" style="background: #ffd4d4; color: #9e2a2a;">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Ms. Noha Samir</h4>
+                            <p class="last-msg">Great progress in vocabulary!</p>
+                        </div>
+                        <div class="contact-meta">
+                            <span class="time">Yesterday</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact 5 - Youssef (Drawing) -->
+                    <div class="contact-item">
+                        <div class="contact-avatar" style="background: #f0d4ff; color: #6a2f9e;">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Prof. Youssef Ali</h4>
+                            <p class="last-msg">Don't forget your art supplies</p>
+                        </div>
+                        <div class="contact-meta">
+                            <span class="time">Monday</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact 6 - Dr. Khaled (Social) -->
+                    <div class="contact-item">
+                        <div class="contact-avatar" style="background: #ffe8c7; color: #b36b1e;">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Dr. Khaled Ibrahim</h4>
+                            <p class="last-msg">The exam schedule is updated</p>
+                        </div>
+                        <div class="contact-meta">
+                            <span class="time">Monday</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact 7 - Class Group Science -->
+                    <div class="contact-item">
+                        <div class="contact-avatar" style="background: #d4e4ff; color: #2a5f9e;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Science 101 Group</h4>
+                            <p class="last-msg">15 new messages</p>
+                        </div>
+                        <div class="contact-meta">
+                            <span class="time">10:45</span>
+                            <span class="unread">5</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact 8 - Class Group Maths -->
+                    <div class="contact-item">
+                        <div class="contact-avatar" style="background: #fdd0e0; color: #a1325a;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Maths 201 Group</h4>
+                            <p class="last-msg">Assignment solutions posted</p>
+                        </div>
+                        <div class="contact-meta">
+                            <span class="time">9:30</span>
+                            <span class="unread">2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CHAT WINDOW ===== -->
+            <div class="chat-window">
+                <!-- Chat Header -->
+                <div class="chat-window-header">
+                    <div class="chat-window-user">
+                        <div class="contact-avatar" style="background: #d4e4ff; color: #2a5f9e; width: 45px; height: 45px;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div>
+                            <h3>Dr. Sarah Ahmed</h3>
+                            <p><span class="status-dot online"></span> Online</p>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button><i class="fas fa-phone"></i></button>
+                        <button><i class="fas fa-video"></i></button>
+                        <button><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages">
+                    <!-- Date Divider -->
+                    <div class="date-divider">Today</div>
+
+                    <!-- Received Message -->
+                    <div class="message received">
+                        <div class="message-avatar" style="background: #d4e4ff; color: #2a5f9e;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>Hello Lisha! I saw your assignment submission. Great work! 🎉</p>
+                            </div>
+                            <span class="message-time">10:30 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Sent Message -->
+                    <div class="message sent">
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>Thank you so much Dr. Sarah! I really enjoyed working on it.</p>
+                            </div>
+                            <span class="message-time">10:32 AM</span>
+                        </div>
+                        <div class="message-avatar" style="background: #4a7ec7; color: #fff;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+
+                    <!-- Received Message -->
+                    <div class="message received">
+                        <div class="message-avatar" style="background: #d4e4ff; color: #2a5f9e;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>I have some feedback for you. Would you like to go through it together?</p>
+                            </div>
+                            <span class="message-time">10:35 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Sent Message -->
+                    <div class="message sent">
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>Yes please! That would be really helpful. When are you available?</p>
+                            </div>
+                            <span class="message-time">10:36 AM</span>
+                        </div>
+                        <div class="message-avatar" style="background: #4a7ec7; color: #fff;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+
+                    <!-- Date Divider -->
+                    <div class="date-divider">Yesterday</div>
+
+                    <!-- Received Message -->
+                    <div class="message received">
+                        <div class="message-avatar" style="background: #d4e4ff; color: #2a5f9e;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>Hi Lisha! I wanted to remind you about the extra credit opportunity. Let me know if you're interested!</p>
+                            </div>
+                            <span class="message-time">4:20 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Sent Message -->
+                    <div class="message sent">
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>Oh yes! I'm definitely interested. What do I need to do?</p>
+                            </div>
+                            <span class="message-time">4:25 PM</span>
+                        </div>
+                        <div class="message-avatar" style="background: #4a7ec7; color: #fff;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+
+                    <!-- Received Message -->
+                    <div class="message received">
+                        <div class="message-avatar" style="background: #d4e4ff; color: #2a5f9e;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>Perfect! I'll send you the details in a separate document. Check your email later today.</p>
+                            </div>
+                            <span class="message-time">4:28 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input">
+                    <div class="input-actions">
+                        <button><i class="fas fa-paperclip"></i></button>
+                        <button><i class="fas fa-smile"></i></button>
+                        <button><i class="fas fa-microphone"></i></button>
+                    </div>
+                    <input type="text" placeholder="Type a message..." />
+                    <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

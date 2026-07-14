@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses · Lisha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="course.css" />
+</head>
+<body>
+
+    <div class="courses-dashboard">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="greeting">
+                <h2>Hey Lisha, <span>Explore Your Courses</span></h2>
+                <p>📚 Discover new courses and track your progress</p>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search courses..." />
+            </div>
+        </div>
+
+        <!-- ===== NAV ===== -->
+        <div class="nav-links">
+            <a href="courses.html" class="active"><i class="fas fa-th-large"></i> Courses</a>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="classes.html"><i class="fas fa-chalkboard-teacher"></i> Classes</a>
+            <a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a>
+            <a href="chat.html"><i class="fas fa-comment-dots"></i> Chat</a>
+        </div>
+
+        <!-- ===== STATS ===== -->
+        <div class="stats-grid">
+            <div class="stat-card" style="background: linear-gradient(135deg, #e8f0fe, #d4e4ff);">
+                <div class="stat-icon" style="color: #4a7ec7;"><i class="fas fa-book-open"></i></div>
+                <div class="stat-number">24</div>
+                <div class="stat-label">Total Courses</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 12%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #fef3e2, #ffe8c7);">
+                <div class="stat-icon" style="color: #e68a2e;"><i class="fas fa-clock"></i></div>
+                <div class="stat-number">278</div>
+                <div class="stat-label">Total Hours</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 8%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #e3f5eb, #c8f0dc);">
+                <div class="stat-icon" style="color: #0d7a4b;"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-number">18</div>
+                <div class="stat-label">Completed</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 5%</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #fce8f0, #fdd0e0);">
+                <div class="stat-icon" style="color: #b33a6b;"><i class="fas fa-star"></i></div>
+                <div class="stat-number">4.8</div>
+                <div class="stat-label">Avg Rating</div>
+                <div class="stat-change up"><i class="fas fa-arrow-up"></i> 2%</div>
+            </div>
+        </div>
+
+        <!-- ===== CATEGORY FILTERS ===== -->
+        <div class="category-filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Science</button>
+            <button class="filter-btn">Mathematics</button>
+            <button class="filter-btn">Computer</button>
+            <button class="filter-btn">Languages</button>
+            <button class="filter-btn">Arts</button>
+            <button class="filter-btn">Social</button>
+        </div>
+
+        <!-- ===== COURSES GRID ===== -->
+        <div class="section-title">
+            <i class="fas fa-graduation-cap"></i> All Courses
+        </div>
+
+        <div class="courses-grid">
+            <!-- Course 1 - Science -->
+            <div class="course-card science">
+                <div class="course-image" style="background: linear-gradient(135deg, #d4e4ff, #4a7ec7);">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="course-body">
+                    <div class="course-badge" style="background: #d4e4ff; color: #2a5f9e;">Science</div>
+                    <h3>Introduction to Science</h3>
+                    <p>Learn the fundamentals of scientific thinking and experimentation.</p>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> 62hrs</span>
+                        <span><i class="fas fa-book"></i> 24 Chapters</span>
+                        <span><i class="fas fa-star" style="color: #f5a623;"></i> 4.9</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, #4a7ec7, #7aa5e6);"></div></div>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">$25</span>
+                        <button class="btn-enroll" style="background: #4a7ec7;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 - Maths -->
+            <div class="course-card maths">
+                <div class="course-image" style="background: linear-gradient(135deg, #fdd0e0, #b33a6b);">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="course-body">
+                    <div class="course-badge" style="background: #fdd0e0; color: #a1325a;">Mathematics</div>
+                    <h3>Advanced Mathematics</h3>
+                    <p>Master algebra, calculus, and mathematical reasoning.</p>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> 54hrs</span>
+                        <span><i class="fas fa-book"></i> 19 Chapters</span>
+                        <span><i class="fas fa-star" style="color: #f5a623;"></i> 4.7</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>45%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 45%; background: linear-gradient(90deg, #b33a6b, #d97294);"></div></div>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">$29</span>
+                        <button class="btn-enroll" style="background: #b33a6b;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 - Computer -->
+            <div class="course-card computer">
+                <div class="course-image" style="background: linear-gradient(135deg, #d4f0e0, #0d7a4b);">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="course-body">
+                    <div class="course-badge" style="background: #d4f0e0; color: #0d6b3a;">Computer</div>
+                    <h3>Computer Science</h3>
+                    <p>Learn programming, networks, and software development.</p>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> 38hrs</span>
+                        <span><i class="fas fa-book"></i> 17 Chapters</span>
+                        <span><i class="fas fa-star" style="color: #f5a623;"></i> 4.8</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, #0d7a4b, #4caf84);"></div></div>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">$27</span>
+                        <button class="btn-enroll" style="background: #0d7a4b;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 4 - Social Studies -->
+            <div class="course-card social">
+                <div class="course-image" style="background: linear-gradient(135deg, #ffe8c7, #e68a2e);">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="course-body">
+                    <div class="course-badge" style="background: #ffe8c7; color: #b36b1e;">Social</div>
+                    <h3>Social Studies</h3>
+                    <p>Explore history, geography, and social systems.</p>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> 48hrs</span>
+                        <span><i class="fas fa-book"></i> 22 Chapters</span>
+                        <span><i class="fas fa-star" style="color: #f5a623;"></i> 4.6</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, #e68a2e, #f0b56e);"></div></div>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">$18</span>
+                        <button class="btn-enroll" style="background: #e68a2e;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 5 - Drawing -->
+            <div class="course-card drawing">
+                <div class="course-image" style="background: linear-gradient(135deg, #f0d4ff, #8a4ac7);">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="course-body">
+                    <div class="course-badge" style="background: #f0d4ff; color: #6a2f9e;">Arts</div>
+                    <h3>Drawing & Art</h3>
+                    <p>Develop your artistic skills and creative expression.</p>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> 29hrs</span>
+                        <span><i class="fas fa-book"></i> 15 Chapters</span>
+                        <span><i class="fas fa-star" style="color: #f5a623;"></i> 4.9</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>30%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 30%; background: linear-gradient(90deg, #8a4ac7, #b57ae6);"></div></div>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">$27</span>
+                        <button class="btn-enroll" style="background: #8a4ac7;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 6 - English -->
+            <div class="course-card english">
+                <div class="course-image" style="background: linear-gradient(135deg, #ffd4d4, #c74a4a);">
+                    <i class="fas fa-language"></i>
+                </div>
+                <div class="course-body">
+                    <div class="course-badge" style="background: #ffd4d4; color: #9e2a2a;">Languages</div>
+                    <h3>English Vocabulary</h3>
+                    <p>Build your vocabulary and communication skills.</p>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> 48hrs</span>
+                        <span><i class="fas fa-book"></i> 25 Chapters</span>
+                        <span><i class="fas fa-star" style="color: #f5a623;"></i> 4.7</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, #c74a4a, #e67a7a);"></div></div>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">$22</span>
+                        <button class="btn-enroll" style="background: #c74a4a;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 7 - Physics -->
+            <div class="course-card science">
+                <div class="course-image" style="background: linear-gradient(135deg, #d4e4ff, #4a7ec7);">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <div class="course-body">
+                    <div class="course-badge" style="background: #d4e4ff; color: #2a5f9e;">Science</div>
+                    <h3>Physics Fundamentals</h3>
+                    <p>Understand motion, energy, and the physical world.</p>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> 45hrs</span>
+                        <span><i class="fas fa-book"></i> 18 Chapters</span>
+                        <span><i class="fas fa-star" style="color: #f5a623;"></i> 4.8</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 0%; background: linear-gradient(90deg, #4a7ec7, #7aa5e6);"></div></div>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">$32</span>
+                        <button class="btn-enroll" style="background: #4a7ec7;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 8 - Data Science -->
+            <div class="course-card computer">
+                <div class="course-image" style="background: linear-gradient(135deg, #d4f0e0, #0d7a4b);">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="course-body">
+                    <div class="course-badge" style="background: #d4f0e0; color: #0d6b3a;">Computer</div>
+                    <h3>Data Science</h3>
+                    <p>Learn data analysis, visualization, and machine learning.</p>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> 50hrs</span>
+                        <span><i class="fas fa-book"></i> 20 Chapters</span>
+                        <span><i class="fas fa-star" style="color: #f5a623;"></i> 4.9</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 0%; background: linear-gradient(90deg, #0d7a4b, #4caf84);"></div></div>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">$35</span>
+                        <button class="btn-enroll" style="background: #0d7a4b;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
